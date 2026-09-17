@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "SSR"
+  ],
+  "key": {
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "smod:fiber_rope"
+    }
+  },
+  "result": {
+    "id": "smod:fire_drill",
+    "count": 1
+  }
+}

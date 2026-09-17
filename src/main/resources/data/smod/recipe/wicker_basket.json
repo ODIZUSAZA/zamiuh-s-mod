@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PPP",
+    "P P",
+    "PPP"
+  ],
+  "key": {
+    "P": {
+      "item": "smod:plant_fiber"
+    }
+  },
+  "result": {
+    "id": "smod:wicker_basket",
+    "count": 1
+  }
+}

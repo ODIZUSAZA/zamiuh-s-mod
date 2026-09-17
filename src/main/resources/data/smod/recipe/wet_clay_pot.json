@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "CC",
+    "CC"
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:clay_ball"
+    }
+  },
+  "result": {
+    "id": "smod:wet_clay_pot",
+    "count": 1
+  }
+}

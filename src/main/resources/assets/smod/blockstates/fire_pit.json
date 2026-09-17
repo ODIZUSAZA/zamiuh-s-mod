@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "smod:block/fire_pit"
+    },
+    "lit=true": {
+      "model": "smod:block/fire_pit_lit"
+    }
+  }
+}

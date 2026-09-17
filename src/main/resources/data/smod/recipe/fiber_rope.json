@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "smod:plant_fiber"
+    },
+    {
+      "item": "smod:plant_fiber"
+    },
+    {
+      "item": "smod:plant_fiber"
+    }
+  ],
+  "result": {
+    "id": "smod:fiber_rope",
+    "count": 1
+  }
+}

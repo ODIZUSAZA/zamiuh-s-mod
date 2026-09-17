@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "F",
+    "S"
+  ],
+  "key": {
+    "F": {
+      "item": "smod:flint_shard"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "id": "smod:stone_knife",
+    "count": 1
+  }
+}

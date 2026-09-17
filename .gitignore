@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+out/
+classes/
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.classpath
+.project
+.settings/
+bin/
+
+# Minecraft
+run/
+runs/
+eclipse/
+remappedSrc/
+
+# Logs
+*.log

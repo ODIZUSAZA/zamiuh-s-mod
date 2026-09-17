@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "HH",
+    "SR"
+  ],
+  "key": {
+    "H": {
+      "item": "smod:polished_pickaxe_head"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "smod:fiber_rope"
+    }
+  },
+  "result": {
+    "id": "smod:polished_pickaxe",
+    "count": 1
+  }
+}

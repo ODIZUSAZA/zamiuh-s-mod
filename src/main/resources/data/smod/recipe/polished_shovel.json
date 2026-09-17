@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "H",
+    "S",
+    "R"
+  ],
+  "key": {
+    "H": {
+      "item": "smod:polished_shovel_head"
+    },
+    "S": {
+      "item": "minecraft:stick"
+    },
+    "R": {
+      "item": "smod:fiber_rope"
+    }
+  },
+  "result": {
+    "id": "smod:polished_shovel",
+    "count": 1
+  }
+}

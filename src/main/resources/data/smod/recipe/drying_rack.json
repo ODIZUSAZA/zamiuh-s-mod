@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "PPP",
+    "PPP",
+    "R R"
+  ],
+  "key": {
+    "P": {
+      "tag": "minecraft:planks"
+    },
+    "R": {
+      "item": "smod:fiber_rope"
+    }
+  },
+  "result": {
+    "id": "smod:drying_rack",
+    "count": 1
+  }
+}

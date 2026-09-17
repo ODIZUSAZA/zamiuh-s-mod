@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "smod:blocks/wicker_basket",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "smod:wicker_basket"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

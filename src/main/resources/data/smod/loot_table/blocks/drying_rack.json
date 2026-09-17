@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "random_sequence": "smod:blocks/drying_rack",
+  "pools": [
+    {
+      "rolls": 1,
+      "bonus_rolls": 0,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "smod:drying_rack"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ]
+    }
+  ]
+}

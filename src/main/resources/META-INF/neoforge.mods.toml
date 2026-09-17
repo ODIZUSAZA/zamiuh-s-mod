@@ -1,0 +1,24 @@
+modLoader="javafml"
+loaderVersion="[4,)"
+license="All Rights Reserved"
+
+[[mods]]
+modId="smod"
+version="0.1.0"
+displayName="Zamiuh's Mod"
+description='''工业模组——从原始时期开始的工业化之路。当前阶段：石器、篝火与陶器雏形。'''
+authors="zamiuh"
+
+[[dependencies.smod]]
+    modId="neoforge"
+    type="required"
+    versionRange="[21.1.0,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.smod]]
+    modId="minecraft"
+    type="required"
+    versionRange="[1.21.1]"
+    ordering="NONE"
+    side="BOTH"
