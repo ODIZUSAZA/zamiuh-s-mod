@@ -2,6 +2,7 @@ package com.zamiuh.smod.registry;
 
 import com.zamiuh.smod.SMod;
 import com.zamiuh.smod.item.FireDrillItem;
+import com.zamiuh.smod.item.KnappingToolItem;
 import com.zamiuh.smod.item.ModTiers;
 import com.zamiuh.smod.item.StoneKnifeItem;
 import net.minecraft.world.food.FoodProperties;
@@ -60,6 +61,10 @@ public final class ModItems {
             () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> POLISHED_SHOVEL_HEAD = ITEMS.register("polished_shovel_head",
             () -> new Item(new Item.Properties()));
+
+    // ==================== 打制工具（敲石台产物，docs/12 v0.1.1） ====================
+    public static final DeferredItem<KnappingToolItem> KNAPPING_TOOL_STONE = ITEMS.register("knapping_tool_stone",
+            () -> new KnappingToolItem(new Item.Properties().stacksTo(1)));
 
     // ==================== 工具 ====================
     public static final DeferredItem<AxeItem> STONE_AXE = ITEMS.register("stone_axe",

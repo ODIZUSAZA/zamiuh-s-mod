@@ -38,6 +38,8 @@ public final class ModCreativeTabs {
                         output.accept(ModItems.POLISHED_AXE_HEAD.get());
                         output.accept(ModItems.POLISHED_PICKAXE_HEAD.get());
                         output.accept(ModItems.POLISHED_SHOVEL_HEAD.get());
+                        // 打制工具
+                        output.accept(ModItems.KNAPPING_TOOL_STONE.get());
                         // 工具
                         output.accept(ModItems.STONE_AXE.get());
                         output.accept(ModItems.STONE_PICKAXE.get());
