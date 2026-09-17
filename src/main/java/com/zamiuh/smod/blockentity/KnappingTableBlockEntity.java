@@ -58,18 +58,18 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
      * 中度 / 重度风化的石头无法打制，直接拒绝。
      */
     public boolean tryPlaceStone(Player player) {
-        if (level() == null || level().isClientSide || !stoneStack.isEmpty()) return false;
+        if (getLevel() == null || getLevel().isClientSide || !stoneStack.isEmpty()) return false;
         ItemStack held = player.getMainHandItem();
         StoneMaterial material = StoneMaterial.byItem(held.getItem());
         if (material == null) return false;
 
-        StoneProperties props = material.generate(level().random);
+        StoneProperties props = material.generate(getLevel().random);
         if (!props.canKnapp()) {
             player.displayClientMessage(Component.translatable("message.smod.knapping.weathered"), true);
             return true; // 已处理（拒绝放置）
         }
         stoneStack = held.split(1);
-        grid.generate(props.defects(), level().random);
+        grid.generate(props.defects(), getLevel().random);
         playKnockSound(0.6F);
         syncToClient();
         return true;
@@ -77,7 +77,7 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
 
     /** 潜行 + 空手右键：收回台面上的原石。 */
     public boolean retrieveStone(Player player) {
-        if (level() == null || level().isClientSide || stoneStack.isEmpty()) return false;
+        if (getLevel() == null || getLevel().isClientSide || stoneStack.isEmpty()) return false;
         giveOrDrop(player, stoneStack);
         stoneStack = ItemStack.EMPTY;
         syncToClient();
@@ -88,7 +88,7 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
 
     /** 左键点击工具栏：吸附第 slot 格工具到光标。 */
     public void attachTool(int slot) {
-        if (level() == null || level().isClientSide) return;
+        if (getLevel() == null || getLevel().isClientSide) return;
         if (slot < 0 || slot >= TOOL_SLOTS) return;
         if (!activeTool.isEmpty() || toolSlots.get(slot).isEmpty()) return;
         activeTool = toolSlots.get(slot);
@@ -99,7 +99,7 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
 
     /** 再次点击工具栏：放回距离点击位置最近的空槽位。 */
     public void putTool(int slotHint) {
-        if (level() == null || level().isClientSide || activeTool.isEmpty()) return;
+        if (getLevel() == null || getLevel().isClientSide || activeTool.isEmpty()) return;
         int target = nearestEmptySlot(slotHint);
         toolSlots.set(target, activeTool);
         activeTool = ItemStack.EMPTY;
@@ -128,17 +128,17 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
      * 随后按「力学与断裂」判定崩边 / 炸裂。
      */
     public void strike(int x, int y, int powerPercent) {
-        if (level() == null || level().isClientSide || stoneStack.isEmpty() || activeTool.isEmpty()) return;
+        if (getLevel() == null || getLevel().isClientSide || stoneStack.isEmpty() || activeTool.isEmpty()) return;
         StoneProperties props = stoneStack.get(ModDataComponents.STONE_PROPERTIES.get());
         if (props == null || !props.canKnapp()) return;
         if (!grid.isValidTarget(x, y)) return;
 
         double power = Math.max(0.1, Math.min(1.0, powerPercent / 100.0));
-        int removed = grid.strike(x, y, power, getToolSharpness(activeTool), level().random);
+        int removed = grid.strike(x, y, power, getToolSharpness(activeTool), getLevel().random);
         if (removed <= 0) return;
 
         playKnockSound(0.9F);
-        switch (grid.rollFracture(props.mechanics(), level().random)) {
+        switch (grid.rollFracture(props.mechanics(), getLevel().random)) {
             case SHATTER -> {
                 // 炸裂：整块石头报废
                 stoneStack = ItemStack.EMPTY;
@@ -163,13 +163,13 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
      * 燧石 → 直接产出燧石碎片；石材 → 打制工具（携带石质工具组件 + 逐件最大耐久）。
      */
     public void takeResult(Player player) {
-        if (level() == null || level().isClientSide || stoneStack.isEmpty()) return;
+        if (getLevel() == null || getLevel().isClientSide || stoneStack.isEmpty()) return;
         if (grid.getRemovedCount() < MIN_REMOVED_FOR_RESULT) {
             player.displayClientMessage(Component.translatable("message.smod.knapping.not_enough"), true);
             return;
         }
         if (stoneStack.is(Items.FLINT)) {
-            giveOrDrop(player, new ItemStack(ModItems.FLINT_SHARD.get(), 3 + level().random.nextInt(3)));
+            giveOrDrop(player, new ItemStack(ModItems.FLINT_SHARD.get(), 3 + getLevel().random.nextInt(3)));
         } else {
             giveOrDrop(player, buildToolStone());
         }
@@ -217,16 +217,16 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
     }
 
     private void playKnockSound(float volume) {
-        if (level() != null) {
-            level().playSound(null, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, volume, 0.8F);
+        if (getLevel() != null) {
+            getLevel().playSound(null, worldPosition, SoundEvents.STONE_HIT, SoundSource.BLOCKS, volume, 0.8F);
         }
     }
 
     private void playerMessage(String key) {
         // 打制反馈广播给附近玩家（简易处理：全服范围内同维度玩家在 16 格内可见）
-        if (level() == null) return;
+        if (getLevel() == null) return;
         Component msg = Component.translatable(key);
-        for (Player p : level().players()) {
+        for (Player p : getLevel().players()) {
             if (p.blockPosition().distSqr(worldPosition) < 16 * 16) {
                 p.displayClientMessage(msg, true);
             }
@@ -236,8 +236,8 @@ public class KnappingTableBlockEntity extends BlockEntity implements MenuProvide
     /** 将网格与槽位状态推送给追踪客户端（BE update tag 通道）。 */
     public void syncToClient() {
         setChanged();
-        if (level() != null && !level().isClientSide) {
-            level().sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 2);
+        if (getLevel() != null && !getLevel().isClientSide) {
+            getLevel().sendBlockUpdated(worldPosition, getBlockState(), getBlockState(), 2);
         }
     }
 

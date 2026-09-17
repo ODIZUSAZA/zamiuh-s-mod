@@ -26,8 +26,9 @@ public final class ContainerHelperSaveHelper {
         CompoundTag itemsTag = tag.getCompound(TAG_ITEMS);
         for (int i = 0; i < items.size(); i++) {
             if (itemsTag.contains(String.valueOf(i))) {
+                int slot = i;
                 ItemStack.parse(registries, itemsTag.getCompound(String.valueOf(i)))
-                        .ifPresent(s -> items.set(i, s));
+                        .ifPresent(s -> items.set(slot, s));
             }
         }
     }

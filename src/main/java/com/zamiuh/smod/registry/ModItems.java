@@ -7,6 +7,7 @@ import com.zamiuh.smod.item.ModTiers;
 import com.zamiuh.smod.item.StoneKnifeItem;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.AxeItem;
+import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.PickaxeItem;
 import net.minecraft.world.item.Rarity;
@@ -85,11 +86,11 @@ public final class ModItems {
             () -> new FireDrillItem(new Item.Properties().stacksTo(1)));
 
     // ==================== 方块物品 ====================
-    public static final DeferredItem<Item> KNAPPING_TABLE = ITEMS.registerSimpleBlockItem(ModBlocks.KNAPPING_TABLE);
-    public static final DeferredItem<Item> FIRE_PIT = ITEMS.registerSimpleBlockItem(ModBlocks.FIRE_PIT);
-    public static final DeferredItem<Item> DRYING_RACK = ITEMS.registerSimpleBlockItem(ModBlocks.DRYING_RACK);
-    public static final DeferredItem<Item> PIT_KILN = ITEMS.registerSimpleBlockItem(ModBlocks.PIT_KILN);
-    public static final DeferredItem<Item> WICKER_BASKET = ITEMS.registerSimpleBlockItem(ModBlocks.WICKER_BASKET);
+    public static final DeferredItem<BlockItem> KNAPPING_TABLE = ITEMS.registerSimpleBlockItem(ModBlocks.KNAPPING_TABLE);
+    public static final DeferredItem<BlockItem> FIRE_PIT = ITEMS.registerSimpleBlockItem(ModBlocks.FIRE_PIT);
+    public static final DeferredItem<BlockItem> DRYING_RACK = ITEMS.registerSimpleBlockItem(ModBlocks.DRYING_RACK);
+    public static final DeferredItem<BlockItem> PIT_KILN = ITEMS.registerSimpleBlockItem(ModBlocks.PIT_KILN);
+    public static final DeferredItem<BlockItem> WICKER_BASKET = ITEMS.registerSimpleBlockItem(ModBlocks.WICKER_BASKET);
 
     private ModItems() {
     }

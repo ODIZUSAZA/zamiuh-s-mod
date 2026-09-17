@@ -19,7 +19,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.neoforged.neoforge.common.CommonHooks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -49,20 +48,20 @@ public class FirePitBlockEntity extends BlockEntity {
      * 打火石传 1.0F，钻木取火器传 0.4F。
      */
     public boolean tryIgnite(float successChance) {
-        if (level() == null || level().isClientSide) {
+        if (getLevel() == null || getLevel().isClientSide) {
             return false;
         }
         if (items.get(1).isEmpty()) {
             return false;
         }
-        if (level().random.nextFloat() > successChance) {
+        if (getLevel().random.nextFloat() > successChance) {
             return false;
         }
-        fuelTime = 1200 + level().random.nextInt(600);
+        fuelTime = 1200 + getLevel().random.nextInt(600);
         cookProgress = 0;
         setChanged();
-        level().setBlockAndUpdate(worldPosition, getBlockState().setValue(BlockStateProperties.LIT, true));
-        level().playSound(null, worldPosition, SoundEvents.FIRE_IGNITE, SoundSource.BLOCKS, 1.0F, 1.0F);
+        getLevel().setBlockAndUpdate(worldPosition, getBlockState().setValue(BlockStateProperties.LIT, true));
+        getLevel().playSound(null, worldPosition, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, 1.0F);
         return true;
     }
 
@@ -71,7 +70,7 @@ public class FirePitBlockEntity extends BlockEntity {
      */
     public ItemInteractionResult handleInteraction(ItemStack stack) {
         Item item = stack.getItem();
-        if (items.get(0).isEmpty() && CommonHooks.getBurnTime(stack, null) > 0) {
+        if (items.get(0).isEmpty() && stack.getBurnTime(null) > 0) {
             items.set(0, stack.split(1));
             setChanged();
             return ItemInteractionResult.CONSUME;
@@ -131,7 +130,7 @@ public class FirePitBlockEntity extends BlockEntity {
             // 尝试续燃
             ItemStack fuel = be.items.get(0);
             if (!fuel.isEmpty()) {
-                be.fuelTime = CommonHooks.getBurnTime(fuel, null);
+                be.fuelTime = fuel.getBurnTime(null);
                 fuel.shrink(1);
                 be.setChanged();
             } else {

@@ -86,7 +86,9 @@ public class FirePitBlock extends Block implements EntityBlock {
         if (level.isClientSide) {
             return null;
         }
-        return type == ModBlockEntities.FIRE_PIT.get() ? (BlockEntityTicker<T>) FirePitBlockEntity::serverTick : null;
+        return type == ModBlockEntities.FIRE_PIT.get()
+                ? (BlockEntityTicker<T>) (BlockEntityTicker<FirePitBlockEntity>) FirePitBlockEntity::serverTick
+                : null;
     }
 
     @Override

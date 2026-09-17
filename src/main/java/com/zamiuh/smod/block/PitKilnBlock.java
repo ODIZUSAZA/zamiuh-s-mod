@@ -52,7 +52,9 @@ public class PitKilnBlock extends Block implements EntityBlock {
         if (level.isClientSide) {
             return null;
         }
-        return type == ModBlockEntities.PIT_KILN.get() ? (BlockEntityTicker<T>) PitKilnBlockEntity::serverTick : null;
+        return type == ModBlockEntities.PIT_KILN.get()
+                ? (BlockEntityTicker<T>) (BlockEntityTicker<PitKilnBlockEntity>) PitKilnBlockEntity::serverTick
+                : null;
     }
 
     @Override

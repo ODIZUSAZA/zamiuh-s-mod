@@ -19,7 +19,7 @@ public enum StoneMaterial {
     DIORITE(Items.DIORITE, 50, 65, 40, 35),
     GRANITE(Items.GRANITE, 45, 70, 35, 40),
     TUFF(Items.TUFF, 70, 40, 65, 55),
-    DEEPSLATE_COBBLESTONE(Items.DEEPSLATE_COBBLESTONE, 65, 60, 60, 35),
+    COBBLED_DEEPSLATE(Items.COBBLED_DEEPSLATE, 65, 60, 60, 35),
     BLACKSTONE(Items.BLACKSTONE, 60, 65, 55, 30);
 
     public final Item item;

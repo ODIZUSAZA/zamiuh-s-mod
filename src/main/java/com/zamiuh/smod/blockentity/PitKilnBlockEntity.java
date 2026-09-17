@@ -14,7 +14,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
-import net.neoforged.neoforge.common.CommonHooks;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -52,7 +51,7 @@ public class PitKilnBlockEntity extends BlockEntity {
         if (item == ModItems.DRIED_FIBER.get()) {
             return 400;
         }
-        return CommonHooks.getBurnTime(stack, null);
+        return stack.getBurnTime(null);
     }
 
     /** 烧制映射表 */

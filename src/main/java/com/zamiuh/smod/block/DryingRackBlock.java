@@ -54,7 +54,9 @@ public class DryingRackBlock extends Block implements EntityBlock {
         if (level.isClientSide) {
             return null;
         }
-        return type == ModBlockEntities.DRYING_RACK.get() ? (BlockEntityTicker<T>) DryingRackBlockEntity::serverTick : null;
+        return type == ModBlockEntities.DRYING_RACK.get()
+                ? (BlockEntityTicker<T>) (BlockEntityTicker<DryingRackBlockEntity>) DryingRackBlockEntity::serverTick
+                : null;
     }
 
     @Override
