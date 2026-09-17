@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 篝火坑方块实体（docs/04）：
+ * 篝火坑方块实体（docs/14）：
  * 槽位 0 燃料 / 1 引火物 / 2 待加热物。
  * 点燃后每 400 tick 烹饪一次；燃料耗尽自动熄灭。
  */

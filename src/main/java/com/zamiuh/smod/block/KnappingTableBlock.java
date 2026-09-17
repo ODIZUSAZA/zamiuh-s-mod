@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 /**
  * 敲石台：手持燧石右键放上工作台，空手连续右键敲击，
  * 达到目标次数（3~5）后掉落燧石碎片。
- * TODO 打制小游戏 GUI（节点图案），见 docs/03。
+ * TODO 打制小游戏 GUI（节点图案），见 docs/13。
  */
 public class KnappingTableBlock extends Block implements EntityBlock {
 

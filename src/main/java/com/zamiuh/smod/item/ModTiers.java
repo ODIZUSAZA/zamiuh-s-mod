@@ -7,7 +7,7 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.block.Block;
 
 /**
- * 工具材料等级（对应 docs/02_物品_石器工具.md 的属性对标表）
+ * 工具材料等级（对应 docs/12_物品_石器工具.md 的属性对标表）
  * 前铁器工具不可修复：修复材料为空。
  */
 public final class ModTiers {

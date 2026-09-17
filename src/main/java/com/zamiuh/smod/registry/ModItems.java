@@ -15,7 +15,7 @@ import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * 物品注册（对应 docs/01_物品_原始材料.md、docs/02_物品_石器工具.md）
+ * 物品注册（对应 docs/11_物品_原始材料.md、docs/12_物品_石器工具.md）
  */
 public final class ModItems {
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(SMod.MODID);

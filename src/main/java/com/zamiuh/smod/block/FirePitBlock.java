@@ -28,7 +28,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * 篝火坑（docs/03）：
+ * 篝火坑（docs/13）：
  * 槽位 0 燃料 / 1 引火物 / 2 待加热物。
  * 放入引火物后用打火石（100%）或钻木取火器（40%）点燃；
  * 点燃后光等级 15，燃料耗尽自动熄灭；加热槽每 400 tick 烹饪一次。

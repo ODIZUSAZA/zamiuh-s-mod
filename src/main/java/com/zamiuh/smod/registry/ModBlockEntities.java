@@ -12,7 +12,7 @@ import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * 方块实体注册（对应 docs/04_方块实体_功能实体.md）
+ * 方块实体注册（对应 docs/14_方块实体_功能实体.md）
  */
 public final class ModBlockEntities {
     public static final DeferredRegister<BlockEntityType<?>> BLOCK_ENTITIES =

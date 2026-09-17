@@ -14,7 +14,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * 方块注册（对应 docs/03_方块_原始工作站.md）
+ * 方块注册（对应 docs/13_方块_原始工作站.md）
  */
 public final class ModBlocks {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(SMod.MODID);

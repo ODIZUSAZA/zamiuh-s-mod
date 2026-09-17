@@ -4,7 +4,7 @@ import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 
 /**
- * 石刀：原版缺失的原始工具（docs/02）。
+ * 石刀：原版缺失的原始工具（docs/12）。
  * 攻速更快、伤害更低的轻量武器。
  * TODO 事件监听：
  *  - 收割高草丛掉落 plant_fiber

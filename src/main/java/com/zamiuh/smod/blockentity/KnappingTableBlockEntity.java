@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * 敲石台方块实体（docs/04）：
+ * 敲石台方块实体（docs/14）：
  * Input 放置的燧石 / KnockCount 已敲击次数 / TargetCount 目标次数。
  * TODO 打制小游戏 GUI（节点图案）。
  */

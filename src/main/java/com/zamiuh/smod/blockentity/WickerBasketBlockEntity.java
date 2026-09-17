@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 
 /**
- * 简易储物篮方块实体（docs/04）：9 格纯容器。
+ * 简易储物篮方块实体（docs/14）：9 格纯容器。
  * TODO 正式 GUI（Menu/Screen）、实现 WorldlyContainer 兼容漏斗。
  */
 public class WickerBasketBlockEntity extends BlockEntity {

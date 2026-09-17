@@ -22,7 +22,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * 晾晒架（docs/03）：白天 + 天空可见时晾晒，1 游戏日转换产物。
+ * 晾晒架（docs/13）：白天 + 天空可见时晾晒，1 游戏日转换产物。
  * 右键悬挂可晾晒物，右键取回。
  */
 public class DryingRackBlock extends Block implements EntityBlock {

@@ -19,7 +19,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 晾晒架方块实体（docs/04）：
+ * 晾晒架方块实体（docs/14）：
  * 白天 + 天空可见 → 晾晒进度 +1，满 24000 tick（1 游戏日）转换产物。
  */
 public class DryingRackBlockEntity extends BlockEntity {

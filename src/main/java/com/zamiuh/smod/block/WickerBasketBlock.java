@@ -18,7 +18,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * 简易储物篮（docs/03）：9 格容器。
+ * 简易储物篮（docs/13）：9 格容器。
  * 手持物品右键整组放入第一空格；空手右键取回最后放入的一组。
  * 被破坏时内容物一并掉落。TODO 正式 GUI、潜行搬走（连内容物）。
  */

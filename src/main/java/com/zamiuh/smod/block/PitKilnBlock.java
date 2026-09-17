@@ -20,7 +20,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
 /**
- * 土窑（骨架版：单方块；正式版 1×1×2 多方块结构见 docs/04）。
+ * 土窑（骨架版：单方块；正式版 1×1×2 多方块结构见 docs/14）。
  * 槽位 0 燃料 / 1 输入 / 2 输出，自动烧制湿陶坯、干陶坯为陶罐。
  */
 public class PitKilnBlock extends Block implements EntityBlock {
